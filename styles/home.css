@@ -1,1 +1,55 @@
 /* add home page styles here */
+header {
+    text-align: center;
+    font-size: 6rem;
+    background: teal;
+    color: white;
+    box-shadow: 5px 5px 5px darkgrey;
+}
+h1 {
+    margin: 50px;
+    text-align: center;
+    font-size: 5rem;
+    color: white;
+    text-shadow: 5px 5px 5px darkgray;
+}
+body {
+  text-align: center;
+    background: rgb(229, 231, 231);
+}
+
+.main-section {
+    border: white solid 5px;
+    padding: 30px;
+    margin: 30px;
+}
+
+.btn {
+    background: salmon;
+    color: white;
+    border: solid 3px white;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px darkgray;
+    margin: 5px;
+    font-size: 1rem;
+}
+
+.btn:active {
+    background-color: teal;
+    box-shadow: 0 5px darkgray;
+    transform: translateY(4px);
+}
+ 
+#input {
+    align-content: center;
+    background:rgb(248, 239, 238);
+    color:teal;
+    border:teal solid 2px;
+    border-radius: 3px;
+    font-size: 1rem;
+}
+
+#score { 
+    color: teal;
+    font-size: 3rem;
+}
