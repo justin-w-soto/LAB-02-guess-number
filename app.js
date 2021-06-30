@@ -20,10 +20,10 @@ gBtn.addEventListener('click', () => {
         gBtn.disabled = true;
     }
     if (userGuess.value < targetNum) {
-        return scr.textContent = `Wrong Answer, But You Have ${guessesRemaining} More Tries`;
+        return scr.textContent = `Your Guess Was Too Low, But You Have ${guessesRemaining} More Tries`;
     }
     if (userGuess.value > targetNum) {
-        return scr.textContent = `Wrong Answer, But You Have ${guessesRemaining} More Tries`;
+        return scr.textContent = `Your Guess Was Too High, But You Have ${guessesRemaining} More Tries`;
     }
     else
         return scr.textContent = `You Are A Wizard!`;
@@ -31,7 +31,9 @@ gBtn.addEventListener('click', () => {
 
 
 
-
+// if (guessesRemaining.value < 1) {
+//   return scr.textContent = 'GAME OVER';
+// }
 
 
 //rBtn.addEventListener('click', () => {
