@@ -5,8 +5,8 @@ import { numCheck } from './utils.js';
 const targetNum = Math.floor(Math.random() * 10);
 const userGuess = document.getElementById('input');
 const gBtn = document.getElementById('guess-btn');
-//const rBtn = document.getElementById('reset-btn');
 const scr = document.getElementById('score');
+//const rBtn = document.getElementById('reset-btn');
 
 let guessesRemaining = 4;
 
@@ -20,13 +20,13 @@ gBtn.addEventListener('click', () => {
         gBtn.disabled = true;
     }
     if (userGuess.value < targetNum) {
-        return numCheck.textContent = `Wrong Answer ${guessesRemaining}`;
+        return scr.textContent = `Wrong Answer, But You Have ${guessesRemaining} More Tries`;
     }
     if (userGuess.value > targetNum) {
-        return numCheck.textContent = `Wrong Answer ${guessesRemaining}`;
+        return scr.textContent = `Wrong Answer, But You Have ${guessesRemaining} More Tries`;
     }
     else
-        return numCheck.textContent = `You Are A Wizard!`;
+        return scr.textContent = `You Are A Wizard!`;
 });
 
 

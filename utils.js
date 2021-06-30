@@ -1,10 +1,12 @@
 //export
-const targetNum = Math.floor(Math.random() * 10);
-export function numCheck(submission) {
-    if (submission < targetNum) {
-        return 'Too Low';
-    } else if (submission > targetNum) {
-        return 'Too High';
-    } else  
-        return 'Congratulations, You Are A Wizard!';
+export function numCheck(userGuess, targetNumber){
+    if (userGuess < targetNumber) {
+        return 'This number is too low';
+    }
+    else if (userGuess > targetNumber) {
+        return 'This number is too high';
+    }
+    else {
+        return 'You are a wiz!!';
+    }
 }
