@@ -1,21 +1,21 @@
 // import functions and grab DOM elements
 
-import { numCheck } from './utils.js';
+//import { numCheck } from './utils.js';
 
 const targetNum = Math.floor(Math.random() * 10);
 const userGuess = document.getElementById('input');
 const gBtn = document.getElementById('guess-btn');
 const scr = document.getElementById('score');
-//const rBtn = document.getElementById('reset-btn');
+const guessedNum = Number(userGuess.value);
+const rBtn = document.getElementById('reset-btn');
 
 let guessesRemaining = 4;
 
 gBtn.addEventListener('click', () => {
-    guessesRemaining --;
-    // console.log(guessesRemaining);
-    // console.log(targetNum);
-    // console.log(userGuess);
-   
+    console.log(guessesRemaining);
+    console.log(targetNum);
+    console.log(userGuess);
+
     if (userGuess.value === targetNum) {
         gBtn.disabled = true;
     }

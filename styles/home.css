@@ -51,5 +51,12 @@ body {
 
 #score { 
     color: teal;
-    font-size: 3rem;
+    font-size: 2rem;
+}
+
+#rules {
+    font-size: 2rem;
+    color: teal;
+    text-shadow: 5px 5px 5px rgba(169, 169, 169, 0.74);
+    margin: 30px;
 }
