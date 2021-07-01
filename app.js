@@ -1,24 +1,17 @@
 // import functions and grab DOM elements
-
 //import { numCheck } from './utils.js';
-
 const targetNum = Math.floor(Math.random() * 10);
 const userGuess = document.getElementById('input');
 const gBtn = document.getElementById('guess-btn');
 const scr = document.getElementById('score');
-const guessedNum = Number(userGuess.value);
-const rBtn = document.getElementById('reset-btn');
-
+//const rBtn = document.getElementById('reset-btn');
 let guessesRemaining = 4;
-
 gBtn.addEventListener('click', () => {
-    console.log(guessesRemaining);
-    console.log(targetNum);
-    console.log(userGuess);
-
-    if (userGuess.value === targetNum) {
-        gBtn.disabled = true;
-    }
+    guessesRemaining --;
+    // console.log(guessesRemaining);
+    // console.log(targetNum);
+    // console.log(userGuess);
+   
     if (userGuess.value < targetNum) {
         return scr.textContent = `Your Guess Was Too Low, But You Have ${guessesRemaining} More Tries`;
     }
@@ -31,15 +24,14 @@ gBtn.addEventListener('click', () => {
 
 
 
+
 // if (guessesRemaining.value < 1) {
 //   return scr.textContent = 'GAME OVER';
 // }
 
 
 //rBtn.addEventListener('click', () => {
-
 //});
-
 //   get the userGuess from the input -- convert it to a number
 //   check the userGuess against the targetNumber
 //   if userGuess === targetNumber --> 
