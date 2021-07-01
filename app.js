@@ -8,7 +8,7 @@ const rBtn = document.getElementById('reset-btn');
 const scr = document.getElementById('score');
 let guessesRemaining = 4;
 function numCheck(){
-    let guessField = Number(userGuess.value);
+   // let guessField = Number(userGuess.value);
     if (guessesRemaining === 4) {
         scr.textContent = 'previous guesses:';
     }
@@ -19,17 +19,22 @@ function numCheck(){
         scr.style.backgroundColor = 'teal';
         scr.style.color = 'white';
         setGameOver();
-    } else if (guessesRemaining === 0) {
+    } if (guessesRemaining === 0) {
         scr.textContent = '!!!GAME OVER GROVER!!!';
         setGameOver();
     } else {
-        scr.textContent = 'Sorry, that is incorrect';
+        scr.textContent = `Sorry, That Is Incorrect. You Have ${guessesRemaining} More Attempts`;
         scr.style.backgroundColor = 'salmon';
         scr.style.color = 'white';
+        scr.style.border = 'solid white';
         if (userGuess < targetNum) {
-            scr.textContent = 'You guessed too low!';
-        } else if (userGuess > targetNum) {
-            scr.textContent = 'That was too high';
+            scr.textContent = `Your Guess Was Too Low, But You Have ${guessesRemaining} More Tries`;
+            scr.style.backgroundColor = 'salmon';
+            scr.style.color = 'white';
+        } if (userGuess > targetNum) {
+            scr.textContent = `Your Guess Was Too High, But You Have ${guessesRemaining} More Tries`;
+            scr.style.backgroundColor = 'salmon';
+            scr.style.color = 'white';
         }
     } 
 
@@ -72,7 +77,8 @@ function resetGame() {
     guessField.disabled = false;
     gBtn.disabled = false;
     guessField.value = '';
-    scr.style.backgroundColor = 'white'; 
+    scr.style.backgroundColor = 'rgb(229, 231, 231)'; 
+    scr.style.color = 'rgb(229, 231, 231)'; 
 }
 
 
