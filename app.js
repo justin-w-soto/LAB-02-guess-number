@@ -1,49 +1,73 @@
 
 //import { numCheck } from './utils.js';
-const targetNum = Math.floor(Math.random() * 10) + 1;
-const guessField = document.getElementsByClassName('guess-field');
+
 const userGuess = document.getElementById('input');
 const gBtn = document.getElementById('guess-btn');
-const rBtn = document.getElementById('reset-btn');
-const scr = document.getElementById('score');
+const userScore = document.getElementById('score');
+
+
 let guessesRemaining = 4;
+let targetNum = Math.ceil(Math.random() * 2);
+console.log(targetNum);
 function numCheck(){
    // let guessField = Number(userGuess.value);
-    if (guessesRemaining === 4) {
-        scr.textContent = 'previous guesses:';
-    }
-    scr.textContent += userGuess + '';
+//     if (Number(guessesRemaining === userGuess)) {
+//         userScore.textContent = 'previous guesses:';
+//     }
+//     userScore.textContent += userGuess + '';
 
-    if (userGuess === targetNum) {
-        scr.textContent = 'You are a Wizard!';
-        scr.style.backgroundColor = 'teal';
-        scr.style.color = 'white';
-        setGameOver();
-    } if (guessesRemaining === 0) {
-        scr.textContent = '!!!GAME OVER GROVER!!!';
-        setGameOver();
-    } else {
-        scr.textContent = `Sorry, That Is Incorrect. You Have ${guessesRemaining} More Attempts`;
-        scr.style.backgroundColor = 'salmon';
-        scr.style.color = 'white';
-        scr.style.border = 'solid white';
-        if (userGuess < targetNum) {
-            scr.textContent = `Your Guess Was Too Low, But You Have ${guessesRemaining} More Tries`;
-            scr.style.backgroundColor = 'salmon';
-            scr.style.color = 'white';
-        } if (userGuess > targetNum) {
-            scr.textContent = `Your Guess Was Too High, But You Have ${guessesRemaining} More Tries`;
-            scr.style.backgroundColor = 'salmon';
-            scr.style.color = 'white';
-        }
-    } 
+//     if (userGuess === targetNum) {
+//         userScore.textContent = 'You are a Wizard!';
+//         userScore.style.backgroundColor = 'teal';
+//         userScore.style.color = 'white';
+//         setGameOver();
 
-    guessesRemaining--;
-    userGuess.value = '';
-    userGuess.focus();
-}
+//         if (guessesRemaining !== 0)
+//         {
+//             userScore.textContent = `Sorry, That Is Incorrect. You Have ${guessesRemaining} More Attempts`;
+//             userScore.style.backgroundColor = 'salmon';
+//             userScore.style.color = 'white';
+//             userScore.style.border = 'solid white';
+//             if (userGuess < targetNum) {
+//                 userScore.textContent = `Your Guess Was Too Low, But You Have ${guessesRemaining} More Tries`;
+//                 userScore.style.backgroundColor = 'salmon';
+//                 userScore.style.color = 'white';
+//             } if (userGuess > targetNum) {
+//                 userScore.textContent = `Your Guess Was Too High, But You Have ${guessesRemaining} More Tries`;
+//                 userScore.style.backgroundColor = 'salmon';
+//                 userScore.style.color = 'white';
+//             }
+//         } if (guessesRemaining === 0) {
+//             userScore.textContent = '!!!GAME OVER GROVER!!!';
+//             setGameOver();
+//         }
+//     } 
+
+//     guessesRemaining--;
+//     userGuess.value = '';
+//     userGuess.focus();
+// }
 
 gBtn.addEventListener('click', numCheck, () => {
+    console.log(targetNum);
+    if (guessesRemaining === 0){
+        gBtn.disabled = true;
+        return userScore.textContent = 'try again!';
+    }
+    else if (Number(userGuess.value === targetNum)) {
+        gBtn.disabled = true;
+        return userScore.textContent = 'you win!';
+    }
+    else if (Number(userGuess.value > targetNum)) {
+        guessesRemaining --;
+        return userScore.textContent = 'the number is lower than your guess'
+    }
+    else if (Number(userGuess.value < targetNum)) {
+        guessesRemaining --;
+        return userScore.textContent = 'the number is higher than your guess'
+    }
+    
+    // else if (userGuess)
     //guessesRemaining --;
     // console.log(guessesRemaining);
     // console.log(targetNum);
