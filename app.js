@@ -3,7 +3,7 @@ const userGuess = document.getElementById('input');
 const gBtn = document.getElementById('guess-btn');
 const userScore = document.getElementById('score');
 
-let targetNum = Math.ceil(Math.random() * 2);
+let targetNum = Math.ceil(Math.random() * 10);
 let guessesRemaining = 3;
 
 gBtn.addEventListener('click', () => {
@@ -17,11 +17,11 @@ gBtn.addEventListener('click', () => {
     }
     else if (Number(userGuess.value) > targetNum) {
         guessesRemaining --;
-        return userScore.textContent = 'the number is lower than your guess';
+        return userScore.textContent = `the number is lower than your guess, guesses remaining: ${guessesRemaining}`;
     }
     else (Number(userGuess.value) < targetNum); 
     guessesRemaining --;
-    return userScore.textContent = 'the number is higher than your guess';
+    return userScore.textContent = `the number is higher than your guess, guesses remaining: ${guessesRemaining}`;
     
 });
 
