@@ -9,7 +9,7 @@ const scr = document.getElementById('score');
 let guessesRemaining = 4;
 function numCheck(){
    // let guessField = Number(userGuess.value);
-    if (guessesRemaining === 4) {
+    if (guessesRemaining === 3) {
         scr.textContent = 'previous guesses:';
     }
     scr.textContent += userGuess + '';
@@ -37,6 +37,9 @@ function numCheck(){
             scr.style.color = 'white';
         }
     } 
+
+    // some of the above code is broken. I wasn't able to get the too high/low 
+    // to work if the reset button was working and vice versa. 
 
     guessesRemaining--;
     userGuess.value = '';
@@ -70,7 +73,7 @@ function setGameOver() {
 }
 
 function resetGame() {
-    guessesRemaining = 4;
+    guessesRemaining = 3;
 
     rBtn.parentNode.removeChild(rBtn);
 
