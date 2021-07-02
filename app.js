@@ -8,8 +8,8 @@ const userScore = document.getElementById('score');
 
 let guessesRemaining = 4;
 let targetNum = Math.ceil(Math.random() * 2);
-console.log(targetNum);
-function numCheck(){
+
+// function numCheck(){
    // let guessField = Number(userGuess.value);
 //     if (Number(guessesRemaining === userGuess)) {
 //         userScore.textContent = 'previous guesses:';
@@ -46,25 +46,26 @@ function numCheck(){
 //     guessesRemaining--;
 //     userGuess.value = '';
 //     userGuess.focus();
-// }
 
-gBtn.addEventListener('click', numCheck, () => {
+
+gBtn.addEventListener('click', () => {
     console.log(targetNum);
-    if (guessesRemaining === 0){
+    // console.log(numCheck);
+    if (userGuess === 0) {
         gBtn.disabled = true;
         return userScore.textContent = 'try again!';
     }
-    else if (Number(userGuess.value === targetNum)) {
+    if (Number(userGuess.value === targetNum)) {
         gBtn.disabled = true;
         return userScore.textContent = 'you win!';
     }
     else if (Number(userGuess.value > targetNum)) {
         guessesRemaining --;
-        return userScore.textContent = 'the number is lower than your guess'
+        return userScore.textContent = 'the number is lower than your guess';
     }
     else if (Number(userGuess.value < targetNum)) {
         guessesRemaining --;
-        return userScore.textContent = 'the number is higher than your guess'
+        return userScore.textContent = 'the number is higher than your guess';
     }
     
     // else if (userGuess)
